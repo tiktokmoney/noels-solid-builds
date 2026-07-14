@@ -11,6 +11,8 @@ import walkwayFinished from "@/assets/walkway-finished.jpg.asset.json";
 import stampedBefore from "@/assets/stamped-before.jpg.asset.json";
 import stampedDuring from "@/assets/stamped-during.jpg.asset.json";
 import stampedFinished from "@/assets/stamped-finished.jpg.asset.json";
+import slabBefore from "@/assets/slab-before.jpg.asset.json";
+import slabFinished from "@/assets/slab-finished.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -31,7 +33,7 @@ type Project = {
   title: string;
   location: string;
   blurb: string;
-  phases: [Phase, Phase, Phase];
+  phases: Phase[];
 };
 
 const projects: Project[] = [
@@ -107,6 +109,25 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    service: "House Slab",
+    title: "Residential House Slab",
+    location: "Woodstock, GA",
+    blurb:
+      "A full residential house slab — from the boom-pump pour over vapor barrier and rebar, to the finished, floated foundation ready for framing.",
+    phases: [
+      {
+        src: slabBefore.url,
+        phase: "Before",
+        caption: "Boom pump placing fresh concrete over the vapor barrier and rebar grid inside formed edges.",
+      },
+      {
+        src: slabFinished.url,
+        phase: "Finished",
+        caption: "Cured, floated slab with clean edges and plumbing stubs — ready for framing to start.",
+      },
+    ],
+  },
 ];
 
 function GalleryPage() {
@@ -147,7 +168,7 @@ function GalleryPage() {
               <p className="max-w-md text-muted-foreground leading-relaxed">{p.blurb}</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+            <div className={`grid gap-5 md:gap-6 ${p.phases.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
               {p.phases.map((ph, i) => (
                 <figure
                   key={ph.src}
