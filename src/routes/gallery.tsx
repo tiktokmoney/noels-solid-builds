@@ -8,6 +8,9 @@ import driveFinished from "@/assets/driveway-finished.jpg.asset.json";
 import walkwayBefore from "@/assets/walkway-before.jpg.asset.json";
 import walkwayDuring from "@/assets/walkway-during.jpg.asset.json";
 import walkwayFinished from "@/assets/walkway-finished.jpg.asset.json";
+import stampedBefore from "@/assets/stamped-before.jpg.asset.json";
+import stampedDuring from "@/assets/stamped-during.jpg.asset.json";
+import stampedFinished from "@/assets/stamped-finished.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -77,6 +80,30 @@ const projects: Project[] = [
         src: walkwayFinished.url,
         phase: "Finished",
         caption: "Cured modular slabs set in slate, leading cleanly out to the patio seating area.",
+      },
+    ],
+  },
+  {
+    service: "Stamped Concrete",
+    title: "Lakeside Stamped Patio",
+    location: "Woodstock, GA",
+    blurb:
+      "A lakeside boathouse patio — from the formed subgrade, through freshly stamped and stained slabs, to a finished ashlar pattern wrapping the building.",
+    phases: [
+      {
+        src: stampedBefore.url,
+        phase: "Before",
+        caption: "Curved forms staked out around the boathouse with the pad prepped and ready for pour.",
+      },
+      {
+        src: stampedDuring.url,
+        phase: "During",
+        caption: "Freshly stamped and stained — wet color deepens the ashlar pattern as it sets.",
+      },
+      {
+        src: stampedFinished.url,
+        phase: "Finished",
+        caption: "Cured stamped patio tying the boathouse, walkway, and flagstone landing together.",
       },
     ],
   },
