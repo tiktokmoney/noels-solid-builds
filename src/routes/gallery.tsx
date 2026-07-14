@@ -83,6 +83,30 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    service: "Stamped Concrete",
+    title: "Lakeside Stamped Patio",
+    location: "Woodstock, GA",
+    blurb:
+      "A lakeside boathouse patio — from the formed subgrade, through freshly stamped and stained slabs, to a finished ashlar pattern wrapping the building.",
+    phases: [
+      {
+        src: stampedBefore.url,
+        phase: "Before",
+        caption: "Curved forms staked out around the boathouse with the pad prepped and ready for pour.",
+      },
+      {
+        src: stampedDuring.url,
+        phase: "During",
+        caption: "Freshly stamped and stained — wet color deepens the ashlar pattern as it sets.",
+      },
+      {
+        src: stampedFinished.url,
+        phase: "Finished",
+        caption: "Cured stamped patio tying the boathouse, walkway, and flagstone landing together.",
+      },
+    ],
+  },
 ];
 
 function GalleryPage() {
