@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ArrowRight, Phone, Check, ShieldCheck, Award, MapPin, HandshakeIcon } from "lucide-react";
+import { ArrowRight, Phone, Check, ShieldCheck, Award, MapPin, Handshake } from "lucide-react";
 import work1 from "@/assets/work1.asset.json";
 import work5 from "@/assets/work5.asset.json";
 import work8 from "@/assets/work8.asset.json";
