@@ -1,11 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ContactForm } from "@/components/ContactForm";
-import {
-  ArrowRight, Star, Phone, Hammer, Layers, Mountain, Building2,
-  ShieldCheck, Award, MapPin, Home as HomeIcon, Grid3x3,
-} from "lucide-react";
+import { ArrowUpRight, Phone, MapPin } from "lucide-react";
 
 import logo from "@/assets/logo.asset.json";
 import work1 from "@/assets/work1.asset.json";
@@ -32,12 +28,28 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: HomeIcon, title: "Driveways", blurb: "Fresh pours, tear-outs, and expansions built flat, square, and ready to carry weight for decades.", img: work4.url, alt: "Concrete driveway pour", cta: "Driveway details" },
-  { icon: Layers, title: "Patios", blurb: "Backyard slabs, entertaining pads, and modern walkways finished the way you want them.", img: work5.url, alt: "Finished concrete patio walkway", cta: "Patio details" },
-  { icon: Mountain, title: "Retaining Walls", blurb: "Structural walls that hold grade, manage runoff, and shape the yard around them.", img: work8.url, alt: "Retaining wall with slate detail", cta: "Retaining walls" },
-  { icon: Grid3x3, title: "Stamped Concrete", blurb: "Textured, color-matched finishes that read like stone, brick, or slate — sealed to last.", img: work7.url, alt: "Stamped concrete finish", cta: "Stamped options" },
-  { icon: Building2, title: "House Foundations", blurb: "Poured foundations engineered to sit flat, square, and true — from day one.", img: work2.url, alt: "Framed foundation ready to pour", cta: "Foundation work" },
-  { icon: Hammer, title: "Footings", blurb: "Load-bearing footings for additions, decks, garages, and outbuildings. Poured to spec.", img: work3.url, alt: "Poured concrete footings", cta: "Footings" },
+  { n: "01", title: "Driveways",         blurb: "Fresh pours, tear-outs, and expansions engineered flat, square, and ready for weight.", img: work4.url },
+  { n: "02", title: "Patios",            blurb: "Backyard slabs and modern walkways finished the way you actually want to live outside.", img: work5.url },
+  { n: "03", title: "Retaining Walls",   blurb: "Structural walls that hold grade, manage runoff, and shape the yard around them.",        img: work8.url },
+  { n: "04", title: "Stamped Concrete",  blurb: "Textured, color-matched finishes that read like stone, brick, or slate — sealed to last.",  img: work7.url },
+  { n: "05", title: "House Foundations", blurb: "Poured foundations built to sit flat, square, and true — from the very first course.",     img: work2.url },
+  { n: "06", title: "Footings",          blurb: "Load-bearing footings for additions, decks, garages, and outbuildings. Poured to spec.",   img: work3.url },
+];
+
+const process = [
+  { n: "01", t: "On-Site Walkthrough", d: "Noel comes out, measures, and listens. Every quote is built on what your site actually needs — no template estimates." },
+  { n: "02", t: "Plan + Flat Price",   d: "Scope, thickness, reinforcement, finish. One honest number. No 'we'll see when we get there.'" },
+  { n: "03", t: "Prep + Pour",         d: "Forms, base, rebar and mesh, then the pour. Owner and crew handle it start to finish — never a sub." },
+  { n: "04", t: "Finish + Walk-Through", d: "Float, broom, or stamp — your call. We seal, we clean up, and we walk it with you before we leave." },
+];
+
+const ticker = [
+  "6+ YEARS HANDS-ON",
+  "OWNER ON EVERY JOB",
+  "FREE ON-SITE QUOTES",
+  "LICENSED · INSURED",
+  "WOODSTOCK · CANTON · MARIETTA",
+  "POURED RIGHT THE FIRST TIME",
 ];
 
 function HomePage() {
@@ -45,237 +57,211 @@ function HomePage() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0">
-          <img src={work5.url} alt="" className="w-full h-full object-cover opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
-        </div>
-
-        <div className="container-x relative py-20 sm:py-28 md:py-40 lg:py-48">
-          <div className="max-w-3xl">
-            <div className="section-eyebrow">
-              <span className="size-1.5 rounded-full bg-primary animate-pulse" />
-              Woodstock, GA · Concrete Contractor
-            </div>
-            <h1 className="mt-6 font-display text-5xl xs:text-6xl sm:text-7xl lg:text-8xl leading-[0.95] tracking-tight break-words">
-              Quality work.<br />
-              <span className="text-primary">Solid</span> foundation.
-            </h1>
-            <p className="mt-7 text-lg text-foreground/80 max-w-xl leading-relaxed">
-              Six years of hands-on concrete craftsmanship. Driveways, patios, retaining walls, stamped concrete, foundations, and footings — poured right the first time.
-            </p>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Link to="/contact" className="inline-flex items-center gap-3 bg-primary text-primary-foreground font-semibold px-7 py-4 text-sm tracking-wider uppercase hover:bg-primary/90 transition-colors">
-                <Phone className="size-4" /> Get a Free Quote
-              </Link>
-              <Link to="/gallery" className="inline-flex items-center gap-2 text-foreground font-semibold px-2 py-4 text-sm tracking-wider uppercase border-b border-primary hover:gap-3 transition-all">
-                See the work <ArrowRight className="size-4" />
-              </Link>
-            </div>
-
-            <div className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-5">
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[0,1,2,3,4].map(i => <Star key={i} className="size-4 fill-primary text-primary" />)}
-                </div>
-                <span className="text-sm"><span className="font-bold">Trusted</span> <span className="text-muted-foreground">· Owner on every job</span></span>
-              </div>
-              <div className="text-sm flex items-center gap-2"><ShieldCheck className="size-4 text-primary" /> Licensed & Insured</div>
-              <div className="text-sm flex items-center gap-2"><Award className="size-4 text-primary" /> 6+ Years Experience</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Stats bar */}
-        <div className="relative border-t border-border bg-background/80 backdrop-blur">
-          <div className="container-x grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
-            {[
-              { n: "6+", l: "Years Pouring" },
-              { n: "06", l: "Services" },
-              { n: "FREE", l: "On-Site Quotes" },
-              { n: "100%", l: "Owner Run" },
-            ].map((s) => (
-              <div key={s.l} className="py-5 md:py-7 px-3 md:px-4 text-center">
-                <div className="font-display text-3xl md:text-5xl text-primary">{s.n}</div>
-                <div className="text-[10px] md:text-[11px] mt-1 tracking-[0.2em] uppercase text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section className="py-24 md:py-32">
-        <div className="container-x">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+      {/* HERO — split layout, dark type panel left, hero image right */}
+      <section className="relative border-b border-border grain-bg">
+        <div className="container-x grid lg:grid-cols-12 gap-0 lg:min-h-[calc(100vh-5rem)]">
+          <div className="lg:col-span-6 py-16 lg:py-24 pr-0 lg:pr-14 flex flex-col justify-between">
             <div>
-              <div className="section-eyebrow">What we build</div>
-              <h2 className="mt-3 font-display text-4xl md:text-6xl leading-tight max-w-xl">Six trades. One crew. Zero shortcuts.</h2>
+              <div className="eyebrow">Woodstock, GA · Est. 2019</div>
+              <h1 className="mt-8 font-display text-[15vw] xs:text-8xl lg:text-[8.5rem] leading-[0.9] tracking-tight">
+                Quality<br />
+                work.<br />
+                <span className="font-serif text-primary block mt-2 text-[13vw] xs:text-7xl lg:text-[7.5rem]">Solid</span>
+                foundation.
+              </h1>
+              <p className="mt-10 max-w-md text-lg text-foreground/75 leading-relaxed">
+                Six years of hands-on concrete craftsmanship. Driveways, patios, retaining walls, stamped concrete, foundations, and footings — poured right the first time.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center gap-3">
+                <Link to="/contact" className="pill pill-solid">
+                  Request Free Quote <ArrowUpRight className="size-4" />
+                </Link>
+                <a href="tel:+16786298775" className="pill pill-ghost">
+                  <Phone className="size-4" /> 678-629-8775
+                </a>
+              </div>
             </div>
-            <p className="text-muted-foreground max-w-md">
-              From a clean driveway pour to a full backyard transformation — every job starts with the same forms, the same standards, and the same owner on-site.
-            </p>
+
+            <dl className="mt-16 grid grid-cols-3 border-t border-border pt-8">
+              {[
+                { t: "6+", l: "years pouring" },
+                { t: "06", l: "trades in-house" },
+                { t: "100%", l: "owner-run" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <dt className="font-display text-4xl md:text-5xl text-primary">{s.t}</dt>
+                  <dd className="mt-2 text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">{s.l}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-            {services.map((s) => (
-              <div key={s.title} className="group relative bg-card overflow-hidden">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={s.img} alt={s.alt} className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+          <div className="lg:col-span-6 relative min-h-[70vh] lg:min-h-full">
+            <div className="absolute inset-0 lg:-mr-[calc((100vw-82rem)/2)] xl:mr-0">
+              <img src={work5.url} alt="Finished slab walkway with slate gravel — Noels Concrete work" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-background/10 to-background/60 lg:to-background/30" />
+              {/* Floating tag card */}
+              <div className="absolute bottom-6 left-6 right-6 md:right-auto md:max-w-xs bg-background/95 backdrop-blur border border-primary/40 rounded-xl p-5">
+                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.28em] text-accent">
+                  <span className="size-1.5 rounded-full bg-accent animate-pulse" /> Recently poured
                 </div>
-                <div className="p-7">
-                  <div className="flex items-center gap-3">
-                    <s.icon className="size-5 text-primary" />
-                    <h3 className="font-display text-2xl tracking-wide">{s.title}</h3>
-                  </div>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.blurb}</p>
-                  <Link to="/services" className="mt-5 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary hover:gap-3 transition-all">
-                    {s.cta} <ArrowRight className="size-3" />
-                  </Link>
-                </div>
+                <div className="mt-2 font-display text-2xl">Modern slab walkway</div>
+                <div className="mt-1 text-xs text-muted-foreground flex items-center gap-1"><MapPin className="size-3" /> Woodstock, GA</div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* MARQUEE TICKER */}
+        <div className="border-t border-border py-4 overflow-hidden bg-card/40">
+          <div className="marquee-track">
+            {[...ticker, ...ticker].map((t, i) => (
+              <span key={i} className="flex items-center gap-6 px-8 font-display text-lg tracking-widest text-primary/80">
+                {t}
+                <span className="text-accent">✳</span>
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WORK SHOWCASE */}
-      <section className="py-24 md:py-32 bg-card border-y border-border">
+      {/* SERVICES — editorial horizontal rows, alternating */}
+      <section className="py-24 md:py-36">
         <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="section-eyebrow justify-center">Recent pours</div>
-            <h2 className="mt-3 font-display text-4xl md:text-6xl">The work speaks first.</h2>
-            <p className="mt-5 text-muted-foreground">A few jobs from around Woodstock and North Atlanta — before, during, and after the pour.</p>
+          <div className="grid md:grid-cols-12 gap-6 items-end mb-16">
+            <div className="md:col-span-8">
+              <div className="eyebrow">What we build</div>
+              <h2 className="mt-5 font-display text-5xl md:text-7xl leading-[0.95]">
+                Six trades.<br />
+                <span className="font-serif text-accent">One</span> honest crew.
+              </h2>
+            </div>
+            <p className="md:col-span-4 text-muted-foreground text-lg leading-relaxed">
+              Every job starts with the same forms, the same standards, and the same owner on-site — from a clean driveway pour to a full backyard rebuild.
+            </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-12 gap-4 md:gap-5">
-            <figure className="col-span-12 md:col-span-8 relative overflow-hidden group aspect-[16/10]">
-              <img src={work5.url} alt="Finished slab walkway with slate gravel" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <figcaption className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-background via-background/70 to-transparent">
-                <div className="text-xs tracking-[0.2em] uppercase text-primary">Patio · Walkway</div>
-                <div className="font-display text-2xl">Modern Slab Walkway</div>
-              </figcaption>
-            </figure>
-            <figure className="col-span-6 md:col-span-4 relative overflow-hidden group aspect-[4/5]">
-              <img src={work7.url} alt="Landscape pathway with pavers" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <figcaption className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background via-background/70 to-transparent">
-                <div className="text-xs tracking-[0.2em] uppercase text-primary">Pathway</div>
-                <div className="font-display text-xl">Landscape Path</div>
-              </figcaption>
-            </figure>
-            <figure className="col-span-6 md:col-span-4 relative overflow-hidden group aspect-[4/5]">
-              <img src={work3.url} alt="Side-yard walkway in progress" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <figcaption className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background via-background/70 to-transparent">
-                <div className="text-xs tracking-[0.2em] uppercase text-primary">In Progress</div>
-                <div className="font-display text-xl">Side-Yard Walkway</div>
-              </figcaption>
-            </figure>
-            <figure className="col-span-12 md:col-span-8 relative overflow-hidden group aspect-[16/10]">
-              <img src={work1.url} alt="Screeding the pour on a driveway" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <figcaption className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-background via-background/70 to-transparent">
-                <div className="text-xs tracking-[0.2em] uppercase text-primary">On the jobsite</div>
-                <div className="font-display text-2xl">Screeding the Pour</div>
-              </figcaption>
-            </figure>
-            <figure className="col-span-12 md:col-span-4 relative overflow-hidden group aspect-[4/5]">
-              <img src={work8.url} alt="Slate and slab patio detail" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <figcaption className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background via-background/70 to-transparent">
-                <div className="text-xs tracking-[0.2em] uppercase text-primary">Detail</div>
-                <div className="font-display text-xl">Slate & Slab</div>
-              </figcaption>
-            </figure>
+          <ul className="border-t border-border">
+            {services.map((s, i) => (
+              <li key={s.title} className="group border-b border-border">
+                <Link to="/services" className="grid md:grid-cols-12 gap-6 items-center py-8 md:py-10 transition-colors hover:bg-card/60 px-2 md:px-4 -mx-2 md:-mx-4 rounded-2xl">
+                  <div className="md:col-span-1 font-display text-3xl md:text-4xl text-primary/60 group-hover:text-primary transition-colors">{s.n}</div>
+                  <div className="md:col-span-4 font-display text-3xl md:text-5xl tracking-tight">{s.title}</div>
+                  <div className="md:col-span-4 text-muted-foreground text-sm md:text-base leading-relaxed">{s.blurb}</div>
+                  <div className="md:col-span-2 relative aspect-[4/3] overflow-hidden rounded-xl md:opacity-0 md:group-hover:opacity-100 md:translate-x-2 md:group-hover:translate-x-0 transition-all duration-500">
+                    <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="md:col-span-1 flex md:justify-end">
+                    <span className="size-10 rounded-full border border-primary/40 grid place-items-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <ArrowUpRight className="size-4" />
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* WORK — asymmetric masonry, portrait dominant */}
+      <section className="py-24 md:py-32 bg-card/60 border-y border-border">
+        <div className="container-x">
+          <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-14">
+            <div>
+              <div className="eyebrow">Recent pours</div>
+              <h2 className="mt-5 font-display text-5xl md:text-7xl">
+                <span className="font-serif text-accent">The work</span><br />
+                speaks first.
+              </h2>
+            </div>
+            <Link to="/gallery" className="pill pill-ghost">See the full gallery <ArrowUpRight className="size-4" /></Link>
           </div>
 
-          <div className="mt-10 text-center">
-            <Link to="/gallery" className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-primary hover:gap-3 transition-all border-b border-primary pb-1">
-              See the full gallery <ArrowRight className="size-4" />
+          <div className="grid grid-cols-12 gap-4 md:gap-6">
+            <GalleryCard span="col-span-12 md:col-span-5 aspect-[4/5]" src={work7.url} label="Landscape Pathway" tag="Finished" />
+            <GalleryCard span="col-span-12 md:col-span-7 aspect-[4/3]" src={work5.url} label="Modern Slab Walkway" tag="Finished" />
+            <GalleryCard span="col-span-6 md:col-span-4 aspect-square" src={work3.url} label="Side-Yard Walkway" tag="In Progress" />
+            <GalleryCard span="col-span-6 md:col-span-4 aspect-square" src={work1.url} label="Screeding the Pour" tag="Crew" />
+            <GalleryCard span="col-span-12 md:col-span-4 aspect-square" src={work8.url} label="Slate & Slab Detail" tag="Detail" />
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS — vertical timeline */}
+      <section className="py-24 md:py-36">
+        <div className="container-x grid lg:grid-cols-12 gap-16 items-start">
+          <div className="lg:col-span-4 lg:sticky lg:top-28">
+            <div className="eyebrow">How it goes</div>
+            <h2 className="mt-5 font-display text-5xl md:text-7xl leading-[0.95]">
+              Four steps.<br />
+              <span className="font-serif text-accent">No mystery.</span>
+            </h2>
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              You'll know what we're pouring, how thick, and when it'll be walk-ready before we ever fire up the mixer.
+            </p>
+            <Link to="/contact" className="mt-8 pill pill-solid">
+              Start Your Quote <ArrowUpRight className="size-4" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="py-24 md:py-32">
-        <div className="container-x">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5">
-              <div className="section-eyebrow">How we work</div>
-              <h2 className="mt-3 font-display text-4xl md:text-6xl leading-tight">Four steps from quote to cured.</h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed">
-                No mystery, no markup games. You'll know what we're pouring, how thick, and when it'll be ready to walk on — before we ever fire up the mixer.
-              </p>
-              <Link to="/contact" className="mt-8 inline-flex items-center gap-3 bg-primary text-primary-foreground font-semibold px-7 py-4 text-sm tracking-wider uppercase hover:bg-primary/90 transition-colors">
-                <Phone className="size-4" /> Start Your Quote
-              </Link>
-            </div>
-            <ol className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border border border-border">
-              {[
-                { n: "01", t: "On-Site Walkthrough", d: "We come out, measure, and listen. Free quotes — every one built on what your site actually needs." },
-                { n: "02", t: "Plan + Pricing", d: "Scope, thickness, reinforcement, finish. Flat number. Honest recommendations, no upsell." },
-                { n: "03", t: "Prep + Pour", d: "Forms, base, rebar/mesh, then the pour. Noel and crew handle it start to finish." },
-                { n: "04", t: "Finish + Cure", d: "Float, broom, stamp — your call. We seal, clean up, and walk it with you before we leave." },
-              ].map((step) => (
-                <li key={step.n} className="bg-card p-7">
-                  <div className="font-display text-5xl text-primary/80">{step.n}</div>
-                  <div className="mt-3 font-display text-xl tracking-wide">{step.t}</div>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.d}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section className="relative py-24 md:py-32 overflow-hidden border-t border-border">
-        <img src={work6.url} alt="" className="absolute inset-0 w-full h-full object-cover opacity-15" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-        <div className="container-x relative">
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-5">
-              <img src={logo.url} alt="" className="h-14 w-auto object-contain mb-6" />
-              <div className="section-eyebrow">Free quote</div>
-              <h2 className="mt-3 font-display text-4xl md:text-6xl leading-[1.05]">
-                Got a job?<br /><span className="text-primary">Let's talk.</span>
-              </h2>
-              <p className="mt-6 text-muted-foreground text-lg leading-relaxed max-w-md">
-                Free on-site quotes across Woodstock and surrounding areas. Call, text, or drop your details — Noel gets back to you personally.
-              </p>
-
-              <div className="mt-10 space-y-4">
-                <a href="tel:+16786298775" className="flex items-center gap-4 group">
-                  <span className="grid place-items-center size-12 bg-primary/10 border border-primary/40 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Phone className="size-5" />
-                  </span>
-                  <span>
-                    <span className="block text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Call or text</span>
-                    <span className="block font-display text-2xl">678-629-8775</span>
-                  </span>
-                </a>
-                <div className="flex items-center gap-4">
-                  <span className="grid place-items-center size-12 bg-primary/10 border border-primary/40 text-primary">
-                    <MapPin className="size-5" />
-                  </span>
-                  <span>
-                    <span className="block text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Service area</span>
-                    <span className="block font-display text-2xl">Woodstock, GA & Surrounding</span>
-                  </span>
+          <ol className="lg:col-span-8 relative">
+            <div className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-accent/40 to-transparent" />
+            {process.map((step) => (
+              <li key={step.n} className="relative pl-20 pb-12 last:pb-0">
+                <div className="absolute left-0 top-0 size-12 rounded-full bg-background border-2 border-primary text-primary font-display grid place-items-center text-lg">
+                  {step.n}
                 </div>
-              </div>
-            </div>
+                <h3 className="font-display text-3xl md:text-4xl">{step.t}</h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed max-w-lg">{step.d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
-            <div className="lg:col-span-7">
-              <div className="border border-border bg-card/80 backdrop-blur p-6 md:p-10">
-                <ContactForm />
-              </div>
-            </div>
+      {/* CTA STRIP */}
+      <section className="relative border-y border-border overflow-hidden">
+        <img src={work6.url} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+        <div className="container-x relative py-20 md:py-28 grid md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-8">
+            <img src={logo.url} alt="" className="size-12 rounded-full ring-1 ring-primary/40 mb-6" />
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
+              Got a job? <span className="font-serif text-accent">Let's talk.</span>
+            </h2>
+            <p className="mt-5 max-w-md text-muted-foreground text-lg">
+              Free on-site quotes across Woodstock and surrounding areas. Noel gets back the same day.
+            </p>
+          </div>
+          <div className="md:col-span-4 flex flex-col gap-3">
+            <a href="tel:+16786298775" className="pill pill-solid justify-center py-5 text-base">
+              <Phone className="size-4" /> 678-629-8775
+            </a>
+            <Link to="/contact" className="pill pill-ghost justify-center py-5">
+              Request quote online <ArrowUpRight className="size-4" />
+            </Link>
           </div>
         </div>
       </section>
 
       <Footer />
     </div>
+  );
+}
+
+function GalleryCard({ span, src, label, tag }: { span: string; src: string; label: string; tag: string }) {
+  return (
+    <figure className={`relative overflow-hidden group rounded-2xl ${span}`}>
+      <img src={src} alt={label} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
+      <figcaption className="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3">
+        <div>
+          <div className="text-[10px] font-bold uppercase tracking-[0.28em] text-accent">{tag}</div>
+          <div className="mt-1 font-display text-xl md:text-2xl">{label}</div>
+        </div>
+        <span className="size-9 rounded-full bg-primary text-primary-foreground grid place-items-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <ArrowUpRight className="size-4" />
+        </span>
+      </figcaption>
+    </figure>
   );
 }
