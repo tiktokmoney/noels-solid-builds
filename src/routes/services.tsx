@@ -2,12 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ArrowUpRight, Phone, Check } from "lucide-react";
-import work2 from "@/assets/work2.asset.json";
 import work3 from "@/assets/work3.asset.json";
-import work4 from "@/assets/work4.asset.json";
-import work5 from "@/assets/work5.asset.json";
-import work7 from "@/assets/work7.asset.json";
 import work8 from "@/assets/work8.asset.json";
+import driveFinished from "@/assets/driveway-finished.jpg.asset.json";
+import walkwayFinished from "@/assets/walkway-finished.jpg.asset.json";
+import stampedFinished from "@/assets/stamped-finished.jpg.asset.json";
+import slabFinished from "@/assets/slab-finished.jpg.asset.json";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -16,26 +16,26 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: "Concrete services in Woodstock, GA: driveways, patios, retaining walls, stamped concrete, house foundations, and footings. Free on-site quotes." },
       { property: "og:title", content: "Concrete Services in Woodstock, GA — Noels Concrete LLC" },
       { property: "og:description", content: "Six concrete trades under one honest roof — driveways, patios, stamped concrete, retaining walls, foundations, and footings." },
-      { property: "og:image", content: work4.url },
+      { property: "og:image", content: driveFinished.url },
     ],
   }),
   component: ServicesPage,
 });
 
 const services = [
-  { n: "01", title: "Driveways", img: work4.url,
+  { n: "01", title: "Driveways", img: driveFinished.url,
     blurb: "Fresh pours, tear-outs, and driveway expansions built to carry weight for decades.",
     details: ["Rebar / wire mesh reinforcement", "4″ – 6″ thickness spec'd to load", "Broom, smooth, or exposed finish", "Control joints cut clean"] },
-  { n: "02", title: "Patios", img: work5.url,
+  { n: "02", title: "Patios", img: walkwayFinished.url,
     blurb: "Backyard slabs, entertaining pads, and modern walkways finished the way you want.",
     details: ["Custom shapes & multi-level pours", "Broom, smooth, or stamped finishes", "Border details & inlays", "Sealed for weather & stains"] },
   { n: "03", title: "Retaining Walls", img: work8.url,
     blurb: "Structural walls that hold grade, manage runoff, and shape the yard the right way.",
     details: ["Poured & block construction", "Drainage & weep planning", "Backfill & compaction", "Cap options to match hardscape"] },
-  { n: "04", title: "Stamped Concrete", img: work7.url,
+  { n: "04", title: "Stamped Concrete", img: stampedFinished.url,
     blurb: "Textured, color-matched finishes that read like natural stone, brick, or slate.",
     details: ["Slate, ashlar, brick & wood patterns", "Integral & release color", "Custom border patterns", "UV-stable sealer finish"] },
-  { n: "05", title: "House Foundations", img: work2.url,
+  { n: "05", title: "House Foundations", img: slabFinished.url,
     blurb: "Poured foundations engineered to sit flat, square, and true from day one.",
     details: ["Monolithic & stem-wall pours", "Rebar cages to spec", "Anchor bolts set on center", "Waterproofing prep"] },
   { n: "06", title: "Footings", img: work3.url,
