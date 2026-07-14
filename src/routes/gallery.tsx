@@ -8,6 +8,9 @@ import driveFinished from "@/assets/driveway-finished.jpg.asset.json";
 import walkwayBefore from "@/assets/walkway-before.jpg.asset.json";
 import walkwayDuring from "@/assets/walkway-during.jpg.asset.json";
 import walkwayFinished from "@/assets/walkway-finished.jpg.asset.json";
+import stampedBefore from "@/assets/stamped-before.jpg.asset.json";
+import stampedDuring from "@/assets/stamped-during.jpg.asset.json";
+import stampedFinished from "@/assets/stamped-finished.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
