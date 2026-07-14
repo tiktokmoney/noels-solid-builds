@@ -22,7 +22,7 @@ export const Route = createFileRoute("/about")({
 const values = [
   { icon: ShieldCheck, t: "Honest Pricing", d: "Flat quotes, no games, no upsell. What we quote is what you pay." },
   { icon: Award, t: "6+ Years Hands-On", d: "Years in the industry — under the sun, in the forms, behind the trowel." },
-  { icon: HandshakeIcon, t: "Owner on Every Job", d: "Noel is on-site start to finish. No subs you've never met." },
+  { icon: Handshake, t: "Owner on Every Job", d: "Noel is on-site start to finish. No subs you've never met." },
   { icon: MapPin, t: "Local to Woodstock", d: "Based here. Working here. Answering the phone here." },
 ];
 
