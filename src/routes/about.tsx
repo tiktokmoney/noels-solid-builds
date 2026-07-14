@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ArrowRight, Phone, Check, ShieldCheck, Award, MapPin, Handshake } from "lucide-react";
+import { ArrowUpRight, Phone, Check, Handshake, ShieldCheck, MapPin, Award } from "lucide-react";
 import work1 from "@/assets/work1.asset.json";
+import work4 from "@/assets/work4.asset.json";
 import work5 from "@/assets/work5.asset.json";
 import work8 from "@/assets/work8.asset.json";
 
@@ -20,10 +21,10 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  { icon: ShieldCheck, t: "Honest Pricing", d: "Flat quotes, no games, no upsell. What we quote is what you pay." },
-  { icon: Award, t: "6+ Years Hands-On", d: "Years in the industry — under the sun, in the forms, behind the trowel." },
-  { icon: Handshake, t: "Owner on Every Job", d: "Noel is on-site start to finish. No subs you've never met." },
-  { icon: MapPin, t: "Local to Woodstock", d: "Based here. Working here. Answering the phone here." },
+  { icon: ShieldCheck, t: "Honest Pricing",   d: "Flat quotes. No games. What we quote is what you pay." },
+  { icon: Award,       t: "6+ Years Hands-On", d: "Years in the field — under the sun, in the forms, behind the trowel." },
+  { icon: Handshake,   t: "Owner Every Job",   d: "Noel is on-site start to finish. Never a sub you've never met." },
+  { icon: MapPin,      t: "Local to Woodstock", d: "Based here. Working here. Answering the phone here." },
 ];
 
 function AboutPage() {
@@ -31,40 +32,40 @@ function AboutPage() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      <section className="relative border-b border-border overflow-hidden">
-        <img src={work1.url} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
-        <div className="container-x relative py-20 md:py-32">
-          <div className="section-eyebrow">About</div>
-          <h1 className="mt-4 font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
-            Hi, I'm <span className="text-primary">Noel.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Owner of Noels Concrete LLC. I started this company with one simple goal: high-quality concrete work with honest pricing, dependable service, and results that last.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <div className="container-x grid lg:grid-cols-12 gap-12">
+      {/* Hero — big portrait card on the left */}
+      <section className="relative border-b border-border grain-bg">
+        <div className="container-x py-20 md:py-28 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
-            <div className="relative overflow-hidden aspect-[4/5] border border-border">
-              <img src={work1.url} alt="Noel and crew on a fresh pour" className="w-full h-full object-cover" />
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-4">
-              <div className="relative overflow-hidden aspect-square border border-border">
-                <img src={work5.url} alt="Finished walkway" className="w-full h-full object-cover" />
-              </div>
-              <div className="relative overflow-hidden aspect-square border border-border">
-                <img src={work8.url} alt="Slate patio detail" className="w-full h-full object-cover" />
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] border border-border">
+              <img src={work1.url} alt="Noel finishing a fresh concrete pour" className="w-full h-full object-cover" />
+              <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur border border-primary/40 rounded-xl p-4">
+                <div className="text-[10px] font-bold uppercase tracking-[0.28em] text-accent">Owner</div>
+                <div className="mt-1 font-display text-2xl">Noel — on the trowel</div>
               </div>
             </div>
           </div>
-          <div className="lg:col-span-7 space-y-6 text-lg text-foreground/85 leading-relaxed">
-            <div className="section-eyebrow">The story</div>
-            <h2 className="font-display text-3xl md:text-5xl text-foreground leading-tight">
-              Built on craftsmanship, honesty, and satisfaction from start to finish.
+          <div className="lg:col-span-7">
+            <div className="eyebrow">About</div>
+            <h1 className="mt-6 font-display text-6xl md:text-8xl leading-[0.9]">
+              Hi, I'm <span className="font-serif text-accent">Noel.</span>
+            </h1>
+            <p className="mt-8 text-xl text-foreground/80 leading-relaxed max-w-xl">
+              I started Noels Concrete LLC with one simple goal: <span className="font-serif text-primary text-2xl">high-quality concrete work</span> with honest pricing, dependable service, and results that last.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Story */}
+      <section className="py-24 md:py-32">
+        <div className="container-x grid lg:grid-cols-12 gap-14">
+          <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit">
+            <div className="eyebrow">The story</div>
+            <h2 className="mt-5 font-display text-4xl md:text-6xl leading-[0.95]">
+              Built on <span className="font-serif text-accent">craftsmanship</span> and honesty.
             </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-7 text-lg text-foreground/85 leading-relaxed">
             <p>
               With 6 years and counting of hands-on experience in the concrete industry, I've developed a strong understanding of what it takes to deliver durable, long-lasting results.
             </p>
@@ -75,7 +76,7 @@ function AboutPage() {
               When you choose us, you can expect quality craftsmanship, honest recommendations, and a commitment to your satisfaction from start to finish. Thank you for considering us for your next project — I look forward to earning your trust and helping bring your vision to life.
             </p>
 
-            <ul className="mt-8 grid sm:grid-cols-2 gap-3 pt-6 border-t border-border">
+            <div className="pt-8 border-t border-border grid sm:grid-cols-2 gap-x-8 gap-y-3">
               {[
                 "6+ years hands-on experience",
                 "Honest, upfront pricing",
@@ -84,29 +85,32 @@ function AboutPage() {
                 "Licensed & insured",
                 "Woodstock & surrounding areas",
               ].map((p) => (
-                <li key={p} className="flex items-start gap-3 text-sm">
-                  <span className="mt-1 grid place-items-center size-4 bg-primary text-primary-foreground shrink-0">
+                <div key={p} className="flex items-start gap-3 text-sm">
+                  <span className="mt-1 grid place-items-center size-5 rounded-full bg-accent/20 text-accent shrink-0">
                     <Check className="size-3" strokeWidth={3} />
                   </span>
                   <span>{p}</span>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-card border-y border-border">
+      {/* Values */}
+      <section className="py-20 md:py-28 bg-card/60 border-y border-border">
         <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="section-eyebrow justify-center">What you can expect</div>
-            <h2 className="mt-3 font-display text-4xl md:text-6xl">The Noels standard.</h2>
+          <div className="max-w-2xl">
+            <div className="eyebrow">What you can expect</div>
+            <h2 className="mt-5 font-display text-5xl md:text-7xl leading-[0.95]">The Noels <span className="font-serif text-accent">standard.</span></h2>
           </div>
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map((v) => (
-              <div key={v.t} className="bg-card p-8">
-                <v.icon className="size-8 text-primary" />
-                <h3 className="mt-5 font-display text-2xl tracking-wide">{v.t}</h3>
+              <div key={v.t} className="rounded-2xl bg-background border border-border p-7 hover:border-primary/40 transition-colors">
+                <div className="size-11 rounded-full bg-accent/15 text-accent grid place-items-center">
+                  <v.icon className="size-5" />
+                </div>
+                <h3 className="mt-6 font-display text-2xl tracking-tight">{v.t}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{v.d}</p>
               </div>
             ))}
@@ -114,19 +118,20 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
-        <div className="container-x flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
-            <h2 className="font-display text-3xl md:text-5xl">Let's talk about your project.</h2>
-            <p className="mt-2 text-muted-foreground">Free on-site quotes across Woodstock and surrounding areas.</p>
-          </div>
+      {/* Peek at work */}
+      <section className="py-20 md:py-28">
+        <div className="container-x grid md:grid-cols-3 gap-5">
+          {[work5, work4, work8].map((w) => (
+            <div key={w.url} className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              <img src={w.url} alt="Recent Noels Concrete project" className="w-full h-full object-cover" />
+            </div>
+          ))}
+        </div>
+        <div className="container-x mt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <h2 className="font-display text-3xl md:text-5xl">Let's talk about <span className="font-serif text-accent">your project</span>.</h2>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="tel:+16786298775" className="inline-flex items-center gap-3 bg-primary text-primary-foreground font-semibold px-7 py-4 text-sm tracking-wider uppercase hover:bg-primary/90 transition-colors">
-              <Phone className="size-4" /> 678-629-8775
-            </a>
-            <Link to="/contact" className="inline-flex items-center gap-2 border border-primary text-primary font-semibold px-7 py-4 text-sm tracking-wider uppercase hover:bg-primary hover:text-primary-foreground transition-colors">
-              Request Quote <ArrowRight className="size-4" />
-            </Link>
+            <a href="tel:+16786298775" className="pill pill-solid"><Phone className="size-4" /> 678-629-8775</a>
+            <Link to="/contact" className="pill pill-ghost">Request quote <ArrowUpRight className="size-4" /></Link>
           </div>
         </div>
       </section>
