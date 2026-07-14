@@ -5,6 +5,9 @@ import { ArrowUpRight, Phone, Camera } from "lucide-react";
 import driveBefore from "@/assets/driveway-before.jpg.asset.json";
 import driveDrying from "@/assets/driveway-drying.jpg.asset.json";
 import driveFinished from "@/assets/driveway-finished.jpg.asset.json";
+import walkwayBefore from "@/assets/walkway-before.jpg.asset.json";
+import walkwayDuring from "@/assets/walkway-during.jpg.asset.json";
+import walkwayFinished from "@/assets/walkway-finished.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -50,6 +53,30 @@ const projects: Project[] = [
         src: driveFinished.url,
         phase: "Finished",
         caption: "Clean broom finish, cut control joints, ready to hand back to the homeowner.",
+      },
+    ],
+  },
+  {
+    service: "Patio Walkway",
+    title: "Patio Walkway Installation",
+    location: "Woodstock, GA",
+    blurb:
+      "A wooded backyard walkway — from formed sections and the first slabs poured, through the connecting stretch, to a finished modular path leading to the seating area.",
+    phases: [
+      {
+        src: walkwayBefore.url,
+        phase: "Before",
+        caption: "Forms framed out along the tree line with the first slabs freshly poured and screeded.",
+      },
+      {
+        src: walkwayDuring.url,
+        phase: "During",
+        caption: "Middle stretch poured and floated, tying the pathway between the fence and stone wall.",
+      },
+      {
+        src: walkwayFinished.url,
+        phase: "Finished",
+        caption: "Cured modular slabs set in slate, leading cleanly out to the patio seating area.",
       },
     ],
   },
