@@ -168,7 +168,7 @@ function GalleryPage() {
               <p className="max-w-md text-muted-foreground leading-relaxed">{p.blurb}</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+            <div className={`grid gap-5 md:gap-6 ${p.phases.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
               {p.phases.map((ph, i) => (
                 <figure
                   key={ph.src}
