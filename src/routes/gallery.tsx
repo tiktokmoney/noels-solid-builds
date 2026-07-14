@@ -109,6 +109,25 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    service: "House Slab",
+    title: "Residential House Slab",
+    location: "Woodstock, GA",
+    blurb:
+      "A full residential house slab — from the boom-pump pour over vapor barrier and rebar, to the finished, floated foundation ready for framing.",
+    phases: [
+      {
+        src: slabBefore.url,
+        phase: "Before",
+        caption: "Boom pump placing fresh concrete over the vapor barrier and rebar grid inside formed edges.",
+      },
+      {
+        src: slabFinished.url,
+        phase: "Finished",
+        caption: "Cured, floated slab with clean edges and plumbing stubs — ready for framing to start.",
+      },
+    ],
+  },
 ];
 
 function GalleryPage() {
