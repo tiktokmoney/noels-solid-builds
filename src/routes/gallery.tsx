@@ -11,6 +11,8 @@ import walkwayFinished from "@/assets/walkway-finished.jpg.asset.json";
 import stampedBefore from "@/assets/stamped-before.jpg.asset.json";
 import stampedDuring from "@/assets/stamped-during.jpg.asset.json";
 import stampedFinished from "@/assets/stamped-finished.jpg.asset.json";
+import slabBefore from "@/assets/slab-before.jpg.asset.json";
+import slabFinished from "@/assets/slab-finished.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -31,7 +33,7 @@ type Project = {
   title: string;
   location: string;
   blurb: string;
-  phases: [Phase, Phase, Phase];
+  phases: Phase[];
 };
 
 const projects: Project[] = [
