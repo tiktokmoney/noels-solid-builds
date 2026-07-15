@@ -18,8 +18,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Noels Concrete LLC — Concrete Contractor in Woodstock, GA" },
       { name: "description", content: "Family-run concrete contractor in Woodstock, GA. Driveways, patios, retaining walls, stamped concrete, foundations & footings. 6+ years experience. Free on-site quotes." },
-      { property: "og:title", content: "Noels Concrete LLC — Woodstock, GA Concrete Contractor" },
-      { property: "og:description", content: "Driveways, patios, stamped concrete, retaining walls & foundations. Owner-run crew serving Woodstock and surrounding areas." },
+      { property: "og:title", content: "Noels Concrete LLC — Concrete Contractor in Woodstock, GA" },
+      { property: "og:description", content: "Family-run concrete contractor in Woodstock, GA. Driveways, patios, retaining walls, stamped concrete, foundations & footings. 6+ years experience. Free on-site quotes." },
       { property: "og:image", content: work5.url },
       { name: "twitter:image", content: work5.url },
     ],
